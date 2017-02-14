@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Coin Calculator</h1>
+
+        <form action="/see_change" method="post">
+            <input type="number" name="bills" placeholder="enter a dollar amount">
+            <input type="number" name="coins" placeholder="enter change">
+            <button type="submit">Calculate coins!</button>
+        </form>
+
+        <h2>Here are changes</h2>
+        <p> Bills: {{ money.getBills() }}</p>
+        <p> Quarters: {{ money.getQuarter() }}</p>
+        <p> Dime: {{ money.getDime() }}</p>
+        <p> Nickel: {{ money.getNickel() }}</p>
+        <p> Penny: {{ money.getPenny() }}</p>
+    </body>
+</html>

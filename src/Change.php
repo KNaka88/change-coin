@@ -2,6 +2,7 @@
 
     class Change
     {
+        private $bills;
         private $quarter;
         private $dime;
         private $nickel;
@@ -9,10 +10,20 @@
 
         function __construct()
         {
+            $this->bills = 0;
             $this->quarter = 0;
             $this->dime = 0;
             $this->nickel = 0;
             $this->penny = 0;
+        }
+
+        function getBills()
+        {
+            return $this->bills;
+        }
+
+        function setBills($new_bills){
+            $this->bills = $new_bills;
         }
 
         function getQuarter()
@@ -53,6 +64,9 @@
             $this->penny = $new_penny;
         }
 
+        function save(){
+            $_SESSION['list_of_coins'] = $this;
+        }
 
         function makeChange($user_coin) //given 1.24 125
         {
@@ -78,9 +92,6 @@
                     $this->penny = $user_coin;
                 }
             }
-
-            return $this->quarter . $this->dime . $this->nickel . $this->penny;
-
         }
 
     }
